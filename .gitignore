@@ -10,3 +10,9 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+# protobuf related files
+*.pb.go
+
+# ide specific
+.idea
+.DS_Store
