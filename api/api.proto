@@ -1,0 +1,19 @@
+// protoc --go_out=plugins=grpc:. *.proto
+syntax = "proto3";
+package api;
+
+message ParseRequest {
+    string url = 1;
+}
+message ParsedURLResponse {
+    string icon = 1;
+    string name = 2;
+    string title = 3;
+    string description = 4;
+    repeated string images = 5;
+}
+
+service Ping {
+    rpc ParseURL (ParseRequest) returns (ParsedURLResponse) {
+    }
+}
