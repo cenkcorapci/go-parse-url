@@ -1,0 +1,10 @@
+{
+  "name": "go-parse-url",
+  "description": "A simple go web service that parses a given url to return useful meta data.",
+  "repository": "https://github.com/cenkcorapci/go-parse-url",
+  "keywords": [
+    "go",
+    "gRPC",
+    "web-scrapping"
+  ]
+}
