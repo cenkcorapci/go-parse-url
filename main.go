@@ -9,7 +9,9 @@ import (
 	"net"
 )
 
-// main start a gRPC server and waits for connection
+/*
+main start a gRPC server and waits for connection
+*/
 func main() {
 	port := utils.GetEnv("PORT", "7777")
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%s", port))
