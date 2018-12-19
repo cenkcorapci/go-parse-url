@@ -1,0 +1,25 @@
+sudo: false
+
+language: go
+
+go:
+  - 1.11.x
+
+before_install:
+  - go get -t -v ./...
+  - go get github.com/mattn/goveralls
+
+install:
+  - go get -v -d google.golang.org/grpc
+  - go get -v -d -t github.com/golang/protobuf/...
+  - curl -L https://github.com/google/protobuf/releases/download/v3.6.1/protoc-3.6.1-linux-x86_64.zip -o /tmp/protoc.zip
+  - unzip /tmp/protoc.zip -d "$HOME"/protoc
+  - mkdir -p "$HOME"/src && ln -s "$HOME"/protoc "$HOME"/src/protobuf
+env:
+  - PATH=$HOME/protoc/bin:$PATH
+
+# Don't email me the results of the test runs.
+notifications:
+  email: false
+after_success:
+  - goveralls -repotoken $COVERALL_REPO_TOKEN
