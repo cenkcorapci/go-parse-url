@@ -10,7 +10,7 @@ import (
 )
 
 /*
-main start a gRPC server and waits for connection
+main starts a gRPC server and waits for connection
 */
 func main() {
 	port := utils.GetEnv("PORT", "7777")
